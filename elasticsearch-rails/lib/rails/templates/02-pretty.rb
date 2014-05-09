@@ -46,7 +46,7 @@ puts        '-'*80, ''; sleep 0.25
 insert_into_file 'Gemfile', <<-CODE, before: 'gem "elasticsearch"'
 
 # NOTE: Kaminari has to be loaded before Elasticsearch::Model so the callbacks are executed
-gem 'kaminari'
+gem 'kaminari', :github => 'amatsuda/kaminari'
 
 CODE
 

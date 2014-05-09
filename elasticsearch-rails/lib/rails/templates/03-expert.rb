@@ -35,28 +35,27 @@ git add:    "Gemfile*"
 git commit: "-m 'Added Ruby gems'"
 
 # ----- Customize the Rails console ---------------------------------------------------------------
+# puts
+# say_status  "Rails", "Customizing `rails console`...\n", :yellow
+# puts        '-'*80, ''; sleep 0.25
 
-puts
-say_status  "Rails", "Customizing `rails console`...\n", :yellow
-puts        '-'*80, ''; sleep 0.25
 
+# gem "pry", group: 'development'
 
-gem "pry", group: 'development'
+# environment nil, env: 'development' do
+#   %q{
+#   console do
+#     config.console = Pry
+#     Pry.config.history.file = Rails.root.join('tmp/console_history.rb').to_s
+#     Pry.config.prompt = [ proc { |obj, nest_level, _| "(#{obj})> " },
+#                           proc { |obj, nest_level, _| ' '*obj.to_s.size + '  '*(nest_level+1)  + '| ' } ]
+#   end
+#   }
+# end
 
-environment nil, env: 'development' do
-  %q{
-  console do
-    config.console = Pry
-    Pry.config.history.file = Rails.root.join('tmp/console_history.rb').to_s
-    Pry.config.prompt = [ proc { |obj, nest_level, _| "(#{obj})> " },
-                          proc { |obj, nest_level, _| ' '*obj.to_s.size + '  '*(nest_level+1)  + '| ' } ]
-  end
-  }
-end
-
-git add:    "Gemfile*"
-git add:    "config/"
-git commit: "-m 'Added Pry as the console for development'"
+# git add:    "Gemfile*"
+# git add:    "config/"
+# git commit: "-m 'Added Pry as the console for development'"
 
 # ----- Disable asset logging in development ------------------------------------------------------
 
